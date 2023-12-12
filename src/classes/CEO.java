@@ -21,6 +21,17 @@
             }
         }
 
+
+        public void enviarSalario(Funcionario funcionario, double valor, double bonus) throws CEOInvalidExeception {
+            if (valor < 0 || bonus < 0) {
+                throw new CEOInvalidExeception("Valor para enviar não pode ser negativo.");
+            }
+    
+            if (funcionario != null) {
+                funcionario.setSaldoBancario(funcionario.getSaldoBancario() + valor + bonus);
+            }
+        }
+
         public void receberSalario(double valor) {
             this.setSaldoBancario(this.getSaldoBancario() + valor);
         }
@@ -36,9 +47,6 @@
                 getNome(), getSaldoBancario());
         }
 
-
-        // Implementação do método listarFuncionarios da classe Funcionario...
-
         @Override
         public void listarFuncionarios() {
             for (Funcionario funcionario : getRegistroFuncionarios()) {
@@ -47,8 +55,7 @@
         }
 
 
-        // Getters e Setters herdados de Funcionario
-        // Getters
+        
         @Override
         public String getNome() {
             return super.getNome();
@@ -69,7 +76,6 @@
             return super.getSaldoBancario();
         }
 
-        // Setters
         @Override
         public void setNome(String nome) {
             super.setNome(nome);
@@ -88,8 +94,6 @@
             System.out.println("Erro ao definir o salário: " + e.getMessage());
             }
         }
-
-        //teste
 
 
         @Override

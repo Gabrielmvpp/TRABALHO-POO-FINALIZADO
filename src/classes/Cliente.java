@@ -17,6 +17,7 @@ public abstract class Cliente extends Pessoa implements ICliente {
         registroClientes.add(this);
     }
 
+
     @Override
     public void listarClientes() {
         for (Cliente cliente : registroClientes) {

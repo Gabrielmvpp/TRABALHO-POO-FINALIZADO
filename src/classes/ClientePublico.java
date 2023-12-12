@@ -20,7 +20,6 @@ public class ClientePublico extends Cliente {
     }
 
 
-        // Getters
     public String getLicitacao() {
         return licitacao;
     }
@@ -33,7 +32,6 @@ public class ClientePublico extends Cliente {
         return prefeito;
     }
 
-    // Setters
     public void setLicitacao(String licitacao) {
         this.licitacao = licitacao;
     }

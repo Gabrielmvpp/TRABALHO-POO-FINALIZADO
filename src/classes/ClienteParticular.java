@@ -9,7 +9,6 @@ public class ClienteParticular extends Cliente {
         this.donoEmpresa = donoEmpresa;
     }
 
-        // Getters
     public double getValuation() {
         return valuation;
     }
@@ -18,7 +17,6 @@ public class ClienteParticular extends Cliente {
         return donoEmpresa;
     }
 
-    // Setters
     public void setValuation(double valuation) throws ValorContratoInvalidoException {
         if (valuation < 0) {
             throw new ValorContratoInvalidoException("O valuation não pode ser negativo.");

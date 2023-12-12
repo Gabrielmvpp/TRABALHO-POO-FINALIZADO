@@ -55,6 +55,11 @@ public abstract class Funcionario extends Pessoa implements IFuncionario {
         this.salario = salario;
     }
 
+    public void setSalario(double salario, double incrementoPercentual) throws SalarioNegativoException {
+        double salarioIncrementado = salario + salario * incrementoPercentual / 100;
+        setSalario(salarioIncrementado);  
+    }
+
     public double getSaldoBancario() {
         return saldoBancario;
     }

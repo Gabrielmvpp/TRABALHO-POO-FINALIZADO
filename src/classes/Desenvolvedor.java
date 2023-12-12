@@ -2,17 +2,16 @@ import java.util.ArrayList;
 
 public class Desenvolvedor extends Funcionario {
     private int idade;
-    private String nivelDeHabilidade; // Exemplo: Junior, Pleno, Sênior
+    private String nivelDeHabilidade; 
     private static ArrayList<Funcionario> registroFuncionarios = new ArrayList<>();
 
     public Desenvolvedor(String nome, String cargo, double salario, int idade, String nivelDeHabilidade) throws DadosInvalidosException {
         super(nome, cargo, salario);
-        setIdade(idade); // Usando o setter para aplicar a validação
-        setNivelDeHabilidade(nivelDeHabilidade); // Usando o setter para aplicar a validação
-        registroFuncionarios.add(this); // Adiciona o desenvolvedor ao registro na criação
+        setIdade(idade); 
+        setNivelDeHabilidade(nivelDeHabilidade); 
+        registroFuncionarios.add(this); 
     }
 
-    // Getters
     public int getIdade() {
         return idade;
     }
@@ -21,7 +20,6 @@ public class Desenvolvedor extends Funcionario {
         return nivelDeHabilidade;
     }
 
-    // Setters com validação
     public void setIdade(int idade) throws DadosInvalidosException {
         if (idade < 18) {
             throw new DadosInvalidosException("Idade do desenvolvedor deve ser maior ou igual a 18 anos.");
@@ -32,6 +30,24 @@ public class Desenvolvedor extends Funcionario {
     public void setNivelDeHabilidade(String nivelDeHabilidade) throws DadosInvalidosException {
         if (!(nivelDeHabilidade.equals("Junior") || nivelDeHabilidade.equals("Pleno") || nivelDeHabilidade.equals("Senior"))) {
             throw new DadosInvalidosException("Nível de habilidade inválido. Deve ser 'Junior', 'Pleno' ou 'Senior'.");
+        }
+        this.nivelDeHabilidade = nivelDeHabilidade;
+    }
+
+    public void setNivelDeHabilidade(int nivel) throws DadosInvalidosException {
+        String nivelDeHabilidade;
+        switch (nivel) {
+            case 1:
+                nivelDeHabilidade = "Junior";
+                break;
+            case 2:
+                nivelDeHabilidade = "Pleno";
+                break;
+            case 3:
+                nivelDeHabilidade = "Senior";
+                break;
+            default:
+                throw new DadosInvalidosException("Nível de habilidade inválido.");
         }
         this.nivelDeHabilidade = nivelDeHabilidade;
     }
