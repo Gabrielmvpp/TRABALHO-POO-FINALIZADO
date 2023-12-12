@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Cliente extends Pessoa implements ICliente {
+public abstract class Cliente extends Pessoa implements ICliente {
     private String contrato;
     protected double valorContrato;
     private static ArrayList<Cliente> registroClientes = new ArrayList<>();
